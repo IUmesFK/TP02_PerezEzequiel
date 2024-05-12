@@ -1,0 +1,2 @@
+class Bala extends GameObject{
+}

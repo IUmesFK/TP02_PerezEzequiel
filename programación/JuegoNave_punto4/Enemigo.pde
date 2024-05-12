@@ -1,0 +1,2 @@
+class Enemigo extends GameObject{
+}

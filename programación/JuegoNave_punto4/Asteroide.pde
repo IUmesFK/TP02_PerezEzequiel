@@ -1,0 +1,2 @@
+class Asteroide extends GameObject{
+}
