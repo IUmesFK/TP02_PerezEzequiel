@@ -49,7 +49,7 @@ class Nave implements IDisplayable, IMoveable, IController{
     return this.velocidadJug2;
   }
   
-  // metodos
+  // --- METODOS ---
   
   public void display(){
     jugador1 = loadImage("naveJug1.png");
@@ -63,7 +63,7 @@ class Nave implements IDisplayable, IMoveable, IController{
   public void readCommand() {
     if(keyPressed) {
       
-      // Si el jugador 1 presiona una de las siguientes teclas, el programa las leerá y aplicará el caso correspondiente. Si no se está presionando ninguna tecla, no hará nada
+      // --- Si el jugador 1 presiona una de las siguientes teclas, el programa las leerá y aplicará el caso correspondiente. ---
       
       if(key=='w' || key=='W') {
         moverArriba1=true;
@@ -87,7 +87,7 @@ class Nave implements IDisplayable, IMoveable, IController{
         moverAbajo1=false;
       }
       
-      // Si el jugador 2 presiona una de las siguientes teclas, el programa las leerá y aplicará el caso correspondiente. Si no se está presionando ninguna tecla, no hará nada
+      // --- Si el jugador 2 presiona una de las siguientes teclas, el programa las leerá y aplicará el caso correspondiente. ---
       
       if(keyCode==UP) {
         moverArriba2=true;
@@ -127,7 +127,7 @@ class Nave implements IDisplayable, IMoveable, IController{
     int tiempoActual = millis();
     float deltaTime = (tiempoActual - tiempoInicial) / 1000.0;
     
-    // Según sea el caso, la nave del jugador 1 se moverá a la dirección indicada
+    // --- Según sea el caso, la nave del jugador 1 se moverá a la dirección indicada. ---
     
     if(moverArriba1==true) {
       posJugador1.y-=velocidadJug1.y*deltaTime;
@@ -139,7 +139,7 @@ class Nave implements IDisplayable, IMoveable, IController{
       posJugador1.x+=velocidadJug1.x*deltaTime;
     }
     
-    // Según sea el caso, la nave del jugador 2 se moverá a la dirección indicada
+    // --- Según sea el caso, la nave del jugador 2 se moverá a la dirección indicada. ---
     
     if(moverArriba2==true) {
       posJugador2.y-=velocidadJug2.y*deltaTime;

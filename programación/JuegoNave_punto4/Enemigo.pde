@@ -15,6 +15,19 @@ class Enemigo extends GameObject implements IDisplayable, IMoveable{
   }
   
   public void mover() {
+    
+       
+    
+    /* decidi cambiar este fragmento de código pq senti que el movimiento era muy rápido, asi que lo cambie por lo de abajo,
+    
+    posicion.x+=velocidad.x;
+    if(posicion.x<150 || posicion.x>=width){
+      velocidad.x*=-1;
+    }
+    
+    */
+      
+    
     int tiempoActual = millis();
     float deltaTime = (tiempoInicial - tiempoActual) / 1000.0;
     posicion.x-=velocidad.x*deltaTime;

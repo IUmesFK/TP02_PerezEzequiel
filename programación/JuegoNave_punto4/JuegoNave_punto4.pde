@@ -1,6 +1,6 @@
 PImage fondo;
 int cantAsteroides;
-int tiempoAsteroid;
+int tiempoAst;
 Nave jugadores;
 Enemigo enemigo1;
 Enemigo enemigo2;
@@ -32,8 +32,8 @@ public void draw(){
   enemigo2.display();
   enemigo2.mover();
   
-  if(millis() - tiempoAsteroid >= 1500 && cantAsteroides < 6) {
-    tiempoAsteroid = millis();
+  if(millis() - tiempoAst >= 1500 && cantAsteroides < 6) {
+    tiempoAst = millis();
     asteroides[cantAsteroides++] = new Asteroide(new PVector(random(30, width-30), 0), new PVector(0, 20));
   }
   
