@@ -9,9 +9,9 @@ class Enemigo extends GameObject implements IDisplayable, IMoveable{
   }
   
   public void display(){
-    imagen = loadImage("enemigo.png");
+    imagen = loadImage("naveEnemigo.png");
     imageMode(CENTER);
-    image(imagen, posicion.x, posicion.y, 80, 80);
+    image(imagen, posicion.x, posicion.y, 150, 150);
   }
   
   public void mover() {
