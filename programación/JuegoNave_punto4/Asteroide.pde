@@ -1,5 +1,7 @@
 class Asteroide extends GameObject implements IDisplayable, IMoveable{
   
+  //constructor
+  
   public Asteroide(PVector posicion, PVector velocidad){
     this.posicion = posicion;
     this.velocidad = velocidad;
