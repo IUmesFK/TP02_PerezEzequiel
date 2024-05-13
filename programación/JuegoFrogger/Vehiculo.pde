@@ -5,8 +5,4 @@ class Vehiculo extends GameObject{
     this.velocidad = velocidad;
   }
   
-  public void display(){
-    
-  }
-  
 }
