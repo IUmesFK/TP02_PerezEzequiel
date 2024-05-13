@@ -6,7 +6,7 @@ class Vehiculo extends GameObject{
   }
   
   public void display(){
-  
+    
   }
   
 }

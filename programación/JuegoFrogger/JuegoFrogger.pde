@@ -1,8 +1,10 @@
 Jugador jugador;
+SpawnerVehiculo spawner;
 
 void setup(){
   size(800,800);
   jugador = new Jugador(new PVector(width/2, height-100), new PVector(0,0));
+  spawner = new SpawnerVehiculo();
 }
 
 void draw(){
@@ -14,4 +16,5 @@ void draw(){
   stroke(255);
   strokeWeight(5);
   line(0, (height/2)+100, width, (height/2)+100);
+  spawner.mostrarVehiculos(spawner.vehiculos);
 }
