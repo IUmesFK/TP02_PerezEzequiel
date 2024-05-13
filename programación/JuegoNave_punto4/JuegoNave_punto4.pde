@@ -31,6 +31,7 @@ public void draw(){
   enemigo1.mover();
   enemigo2.display();
   enemigo2.mover();
+  jugadores.dispararBalas(jugadores.balasJug1, jugadores.balasJug2);
   
   if(millis() - tiempoAst >= 1500 && cantAsteroides < 6) {
     tiempoAst = millis();

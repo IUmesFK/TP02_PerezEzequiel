@@ -8,10 +8,20 @@ class Nave implements IDisplayable, IMoveable, IController{
   private boolean moverArriba1, moverAbajo1, moverDerecha1, moverIzquierda1;
   private boolean moverArriba2, moverAbajo2, moverDerecha2, moverIzquierda2;
   private int tiempoInicial;
+  private PImage bala;
+  private Bala[] balasJug1;
+  private Bala[] balasJug2;
+  private int indicadorBalas1;
+  private int indicadorBalas2;
+  
   
   // --- METODO CONSTRUCTOR ---
   
   public Nave(){
+    balasJug1 = new Bala[200];
+    indicadorBalas1 = 0;
+    balasJug2 = new Bala[200];
+    indicadorBalas2 = 0;
     tiempoInicial = millis();  
   }
   
@@ -152,5 +162,33 @@ class Nave implements IDisplayable, IMoveable, IController{
     }
     
     tiempoInicial = tiempoActual;
+  }
+  
+  public void dispararBalas(Bala[] balasJug1, Bala[] balasJug2){
+    if(keyPressed && (key == 'k' || key == 'K')) {
+      balasJug1[indicadorBalas1++] = new Bala(new PVector(posJugador1.x, posJugador1.y-80), new PVector(0, 75), bala); // --- Cuando el jugador uno presione la tecla 'K', se dispararan las balas. ---
+    }
+    
+    for(int i=0; i<indicadorBalas1; i++) {
+      Bala listaBalas1=balasJug1[i];
+      bala = loadImage("bala.png");
+      imageMode(CENTER);
+      image(bala, listaBalas1.posicion.x, listaBalas1.posicion.y, 50, 50);
+      listaBalas1.posicion.y-=listaBalas1.velocidad.y;
+      
+    }
+    
+    if(keyPressed && (key == ENTER)) {
+      balasJug2[indicadorBalas2++] = new Bala(new PVector(posJugador2.x, posJugador2.y-80), new PVector(0, 75), bala); // --- Cuando el jugador presione la tecla 'Enter', se dispararan las balas. ---
+    }
+    
+    for(int i=0; i<indicadorBalas2; i++) {
+      Bala listaBalas2=balasJug2[i];
+      bala = loadImage("bala.png");
+      imageMode(CENTER);
+      image(bala, listaBalas2.posicion.x, listaBalas2.posicion.y, 50, 50);
+      listaBalas2.posicion.y-=listaBalas2.velocidad.y;
+
+    }
   }
 }
